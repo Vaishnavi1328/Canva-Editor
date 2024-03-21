@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Canva-Editor/static/css/main.09c2eea7.css",
+    "main.js": "/Canva-Editor/static/js/main.148da199.js",
+    "index.html": "/Canva-Editor/index.html",
+    "main.09c2eea7.css.map": "/Canva-Editor/static/css/main.09c2eea7.css.map",
+    "main.148da199.js.map": "/Canva-Editor/static/js/main.148da199.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.09c2eea7.css",
+    "static/js/main.148da199.js"
+  ]
+}
