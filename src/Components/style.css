@@ -1,0 +1,99 @@
+body{
+    margin:0;
+    font-family:   'candara';
+  }
+  
+  #editor{
+    display:flex;
+    width: 100vw;
+    height:100vh;
+    background-color: white;
+  }
+
+  .half{
+    flex: 1;
+  }
+  
+  #editor-area{
+    background-color: #eeeeee;
+  }
+  
+  .editor-item{
+    padding : 3px;
+    margin-top: 10px;
+  }
+  
+  canvas{
+    border-radius: 7%;
+  }
+  #canvas-area{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+  }
+  
+  #color-picker-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  #color-list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .color-box {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  #color-picker-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 100%;
+    margin-left: 10px;
+    background: none;
+    cursor: pointer;
+  }
+  
+  #color-picker {
+    position: absolute;
+    top: 40px;
+    left: 0;
+  }
+
+  .title{
+    text-align: center;
+  }
+  
+  #imageFileInput{
+    display: none;
+  }
+
+  .text{
+    width: 40vw;
+    padding: 10px;
+    border: 0.1px solid black;
+    margin: 20px;
+    
+  }
+
+  .text p{
+    margin:auto;
+    font-size: 10px;
+  }
+
+  .text input{
+    background-color: rgb(232, 223, 223);
+    outline: none;
+    width:30vw;
+    border:0;
+  }
