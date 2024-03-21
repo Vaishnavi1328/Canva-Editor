@@ -14,6 +14,7 @@ function App() {
     updateCanvas();
   }, [image, inputText, ctaText, color, recentColors]);
 
+  //to load input image
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -25,6 +26,7 @@ function App() {
     reader.readAsDataURL(file);
   };
 
+  //to update canvas
   const updateCanvas = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -59,7 +61,6 @@ function App() {
         }
     }
 
-
     ctx.fillStyle = "black";
     ctx.font = "16px candara";
 
@@ -75,31 +76,19 @@ function App() {
       ctx.fillText(lines[2],20,340);
     }
 
-    ctx.fillText(ctaText, 300, 300);
-
     ctx.strokeStyle = "black"; 
-    ctx.lineWidth = 2; 
-    const x = 60;
-    const y = 40;
-    const width = 300;
-    const height = 200;
-    const cornerRadius = 10;
-
-    ctx.beginPath();
-    ctx.moveTo(x + cornerRadius, y);
-    ctx.lineTo(x + width - cornerRadius, y);
-    ctx.arcTo(x + width, y, x + width, y + cornerRadius, cornerRadius);
-    ctx.lineTo(x + width, y + height - cornerRadius);
-    ctx.arcTo(x + width, y + height, x + width - cornerRadius, y + height, cornerRadius);
-    ctx.lineTo(x + cornerRadius, y + height);
-    ctx.arcTo(x, y + height, x, y + height - cornerRadius, cornerRadius);
-    ctx.lineTo(x, y + cornerRadius);
-    ctx.arcTo(x, y, x + cornerRadius, y, cornerRadius);
-    ctx.closePath();
-    ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
+    drawRoundedRect(ctx,60,40,300,200,0);
     ctx.stroke();
 
+    ctx.fillStyle = "#FFFFFF80";
+    ctx.lineWidth = 1.5;
+    drawRoundedRect(ctx,270,283,100,25,12);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.fillStyle = "black";
+    ctx.fillText(ctaText, 280, 300);
   };
 
   const handleInputChange = (event) => {
@@ -132,6 +121,21 @@ function App() {
   const handleRecentColorClick = (selectedColor) => {
     setColor(selectedColor);
   };
+
+  //arc feature
+  const drawRoundedRect = (ctx, x, y, width, height, cornerRadius) => {
+    ctx.beginPath();
+    ctx.moveTo(x + cornerRadius, y);
+    ctx.lineTo(x + width - cornerRadius, y);
+    ctx.arcTo(x + width, y, x + width, y + cornerRadius, cornerRadius);
+    ctx.lineTo(x + width, y + height - cornerRadius);
+    ctx.arcTo(x + width, y + height, x + width - cornerRadius, y + height, cornerRadius);
+    ctx.lineTo(x + cornerRadius, y + height);
+    ctx.arcTo(x, y + height, x, y + height - cornerRadius, cornerRadius);
+    ctx.lineTo(x, y + cornerRadius);
+    ctx.arcTo(x, y, x + cornerRadius, y, cornerRadius);
+    ctx.closePath();
+};
 
   return (
     <div id="editor">
